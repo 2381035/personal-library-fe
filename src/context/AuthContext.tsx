@@ -7,7 +7,6 @@ import React, {
   ReactNode,
 } from "react";
 import { AuthContextType, AuthState, User } from "../types";
-import apiClient from "../services/api"; // Import apiClient jika perlu fetch user profile
 
 // Nilai default untuk context
 const defaultState: AuthState = {
