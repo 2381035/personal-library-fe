@@ -1,0 +1,141 @@
+/* src/pages/BooksPage.css */
+
+.books-page {
+  padding: 20px 0; /* Padding vertikal untuk halaman */
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--border-color, #eee);
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: 2rem; /* Ukuran judul halaman */
+}
+
+.add-book-button {
+  /* Ambil style dasar dari index.css */
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.loading-message,
+.no-books-message {
+  text-align: center;
+  margin-top: 40px;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.error-message-global {
+  text-align: center;
+  margin-top: 40px;
+  color: var(--error-color);
+  font-weight: bold;
+}
+
+.book-list-container {
+  /* Container untuk grid */
+}
+
+.book-grid {
+  display: grid;
+  /* Buat kolom otomatis sesuai lebar, minimal 250px */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 25px; /* Jarak antar kartu buku */
+}
+
+.book-card {
+  background-color: var(--background-color, #ffffff);
+  border: 1px solid var(--border-color, #e0e0e0);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column; /* Susun konten kartu secara vertikal */
+  transition: box-shadow 0.2s ease;
+}
+
+.book-card:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Shadow lebih jelas saat hover */
+}
+
+.book-card h3 {
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+  color: var(--text-color-dark);
+}
+
+.book-card .book-author {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.book-card .book-pages,
+.book-card .book-isbn {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 5px;
+}
+
+.book-actions {
+  margin-top: auto; /* Dorong tombol ke bawah kartu */
+  padding-top: 15px; /* Jarak dari konten di atasnya */
+  display: flex;
+  gap: 10px; /* Jarak antar tombol */
+  border-top: 1px solid #f0f0f0; /* Garis pemisah halus */
+}
+
+.book-actions button {
+  /* Ambil style dasar dari index.css tapi sesuaikan */
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  border-radius: 4px;
+}
+
+.button-edit {
+  /* Biarkan warna default (primary) */
+}
+
+.button-delete {
+  background-color: var(--error-color, #d32f2f); /* Warna merah untuk delete */
+}
+.button-delete:hover {
+  background-color: #b71c1c; /* Warna merah lebih gelap */
+}
+
+/* Responsive untuk Book Grid */
+@media (max-width: 600px) {
+  .page-header {
+    flex-direction: column; /* Tumpuk judul dan tombol */
+    align-items: flex-start; /* Ratakan kiri */
+    gap: 15px; /* Jarak */
+  }
+  .page-header h1 {
+    font-size: 1.6rem;
+  }
+  .add-book-button {
+    align-self: stretch; /* Tombol lebar penuh */
+    text-align: center;
+  }
+
+  .book-grid {
+    /* Di layar kecil, mungkin 1 kolom saja */
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .book-card {
+    padding: 15px;
+  }
+  .book-card h3 {
+    font-size: 1.1rem;
+  }
+}

@@ -1,0 +1,68 @@
+/* src/components/Modal.css */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* Latar belakang semi-transparan */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1100; /* Di atas header */
+}
+
+.modal-content {
+  background-color: var(--background-color, #ffffff);
+  padding: 30px 40px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  max-width: 500px; /* Lebar maksimum modal */
+  width: 90%; /* Lebar relatif */
+  max-height: 80vh; /* Tinggi maksimum */
+  overflow-y: auto; /* Scroll jika konten terlalu panjang */
+  position: relative;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color, #e0e0e0);
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--text-color-dark);
+}
+
+.modal-close-button {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #aaa;
+  padding: 0;
+}
+.modal-close-button:hover {
+  color: var(--text-color-dark);
+}
+
+.modal-body {
+  /* Styling untuk konten di dalam modal */
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .modal-content {
+    padding: 20px 25px;
+    width: 95%;
+  }
+  .modal-header h2 {
+    font-size: 1.3rem;
+  }
+}

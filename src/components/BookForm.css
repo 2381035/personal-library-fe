@@ -1,0 +1,40 @@
+/* src/components/BookForm.css atau tambahkan ke index.css/modal.css */
+.book-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Jarak antar input group */
+}
+
+.form-input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.form-input-group input,
+.form-input-group select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 0.95rem;
+  font-family: inherit;
+  background-color: var(--input-bg-color);
+}
+
+.form-input-group input:focus,
+.form-input-group select:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 160, 171, 0.2);
+}
+
+.form-submit-button {
+  margin-top: 15px; /* Jarak dari input terakhir */
+  align-self: flex-end; /* Tombol ke kanan */
+  padding: 10px 25px; /* Sesuaikan padding */
+  border-radius: 5px; /* Samakan radius dengan input */
+  letter-spacing: 0.5px;
+}

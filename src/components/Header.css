@@ -1,0 +1,106 @@
+/* src/components/Header.css */
+.app-header {
+  background-color: var(--background-color, #ffffff);
+  padding: 15px 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo a {
+  font-size: 1.4rem; /* Kecilkan sedikit */
+  font-weight: bold;
+  color: var(--text-color-dark, #1a2b48);
+  text-decoration: none;
+}
+
+.nav-links {
+  flex-grow: 1;
+  text-align: center;
+  /* Akan disembunyikan di mobile oleh media query */
+}
+
+.auth-links {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.welcome-user {
+  margin-right: 15px;
+  color: var(--text-color-dark, #555);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.header-link {
+  color: var(--text-color-dark, #1a2b48);
+  text-decoration: none;
+  padding: 8px 0;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+.header-link:hover {
+  color: var(--primary-color, #00a0ab);
+  text-decoration: none;
+}
+
+.header-button,
+.logout-button {
+  /* Terapkan style tombol global tapi override padding/font-size */
+  padding: 7px 14px;
+  font-size: 0.85rem;
+  font-weight: 500; /* Sesuaikan weight */
+  white-space: nowrap;
+}
+
+/* Style spesifik untuk logout agar mirip tombol biasa */
+.logout-button {
+  font-family: inherit;
+}
+
+/* --- Media Queries --- */
+@media (max-width: 768px) {
+  .app-header {
+    padding: 10px 15px; /* Kurangi padding */
+  }
+
+  .logo a {
+    font-size: 1.2rem; /* Kecilkan lagi */
+  }
+
+  .nav-links {
+    display: none; /* Sembunyikan nav utama (perlu hamburger nanti) */
+  }
+
+  .auth-links {
+    gap: 10px; /* Kurangi gap */
+  }
+
+  .welcome-user {
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-user {
+    display: none; /* Sembunyikan welcome di layar sangat kecil */
+  }
+  .auth-links {
+    gap: 8px;
+  }
+  .header-button,
+  .logout-button {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+}

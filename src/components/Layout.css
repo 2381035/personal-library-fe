@@ -1,0 +1,22 @@
+/* src/components/Layout.css */
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 40px 30px; /* Beri padding lebih besar di desktop */
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* --- Media Query --- */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 20px 15px; /* Kurangi padding konten utama */
+  }
+}
