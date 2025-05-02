@@ -1,17 +1,15 @@
 // src/pages/BooksPage.tsx
 import React, { useState, useEffect, useCallback } from "react";
 import apiClient from "../services/api";
-import { Book, User } from "../types"; // Import User juga jika perlu
-import { useAuth } from "../context/AuthContext";
-import Modal from "../components/Modal"; // Import Modal
-import BookForm from "../components/BookForm"; // Import BookForm
-import "./BooksPage.css"; // Kita akan buat CSS baru
+import { Book } from "../types";
+import Modal from "../components/Modal";
+import BookForm from "../components/BookForm";
+import "./BooksPage.css";
 
 const BooksPage: React.FC = () => {
   const [books, setBooks] = useState<Book[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const { user } = useAuth(); // Ambil user jika perlu info nama
 
   // State untuk Modal dan Form
   const [isModalOpen, setIsModalOpen] = useState(false);
